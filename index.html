@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>DRIVE HUB — Unified Experience</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div id="game-wrap">
+      <canvas id="cv"></canvas>
+
+      <div id="topbar">
+        <div class="topbar-left">
+          <button class="hud-btn" id="bMenu">☰ MENU</button>
+          <button class="hud-btn" id="bCam">👁 VISÃO</button>
+          <button class="hud-btn" id="bAI">🤖 DIRETORES IA</button>
+        </div>
+
+        <div class="topbar-right">
+          <div class="hud-card no-pointer" id="speed-hud">
+            <div class="speed-row">
+              <span class="spd-val" id="spd">0</span>
+              <span class="spd-unit">km/h</span>
+            </div>
+            <div class="nitro-bar-wrap"><div class="nitro-bar-fill" id="nitf"></div></div>
+          </div>
+
+          <div class="hud-card no-pointer" id="driftbox">
+            <div class="combo" id="combo">0</div>
+            <div class="mult" id="mult">x1.0 | <span id="total">0</span> pts</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="center-msg"></div>
+
+      <div class="touch-btn" id="bL">◀</div>
+      <div class="touch-btn" id="bR">▶</div>
+      <div class="touch-btn" id="bGas">GAS</div>
+      <div class="touch-btn" id="bBrake">FREIO</div>
+      <div class="touch-btn" id="bDrift">DRIFT</div>
+      <div class="touch-btn" id="bNit">N₂O</div>
+
+      <div id="ai-drawer" hidden>
+        <div id="ai-msgs">Converse com o Diretor de IA para alterar o jogo em tempo real (clima, trânsito, física, visual).</div>
+        <input type="text" id="ai-input" placeholder="Ex.: Noite chuvosa com carros mais rápidos" />
+        <div class="ai-btn-row">
+          <button class="hud-btn" id="ai-send">ENVIAR</button>
+          <button class="hud-btn" id="ai-auto">AUTO: OFF</button>
+        </div>
+      </div>
+
+      <div class="modal-overlay" id="menu-modal">
+        <div class="menu-card">
+          <h1 class="menu-title">DRIVE <span>HUB</span></h1>
+          <div class="menu-sub">UNIFIED DRIVING EXPERIENCE</div>
+
+          <div class="section-lbl">Modo de Jogo</div>
+          <div class="opt-row" id="mode-row">
+            <button class="opt-btn sel" data-mode="city">🏙️ CIDADE ABERTA</button>
+            <button class="opt-btn" data-mode="drift">🏎️ PISTAS DE DRIFT</button>
+          </div>
+
+          <div class="section-lbl">Carro</div>
+          <div class="opt-row" id="car-row"></div>
+
+          <div class="section-lbl" id="track-lbl">Pista / Mapa</div>
+          <div class="opt-row" id="track-row"></div>
+
+          <div class="section-lbl">Qualidade Gráfica</div>
+          <div class="opt-row" id="gfx-row">
+            <button class="opt-btn sel" data-gfx="high">Alta (4K Native)</button>
+            <button class="opt-btn" data-gfx="norm">Padrão (Balanced)</button>
+          </div>
+
+          <button class="btn-primary" id="btn-start">INICIAR JOGO</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/app.js"></script>
+  </body>
+</html>

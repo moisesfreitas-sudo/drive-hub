@@ -1,21 +1,68 @@
-MIT License
+# DRIVE HUB
 
-Copyright (c) 2026 moisesfreitas-sudo
+DRIVE HUB é um protótipo de jogo de condução em navegador com foco em drift, city cruising e pistas de alta velocidade. O projeto foi concebido para rodar em desktop e mobile e permite ajustar carro, modo de jogo, qualidade visual e clima via assistente IA.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## Como executar localmente
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Você pode abrir o arquivo `index.html` diretamente em um navegador, mas a forma recomendada é servir a pasta com um servidor HTTP para evitar problemas de segurança e carregamento de assets locais.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+### Opção 1 — Python
+
+```bash
+git clone https://github.com/moisesfreitas-sudo/drive-hub.git
+cd drive-hub
+python3 -m http.server 8080
+```
+
+Depois abra:
+
+```text
+http://localhost:8080
+```
+
+### Opção 2 — Node.js
+
+```bash
+git clone https://github.com/moisesfreitas-sudo/drive-hub.git
+cd drive-hub
+npx serve . -l 8080
+```
+
+Depois abra:
+
+```text
+http://localhost:8080
+```
+
+## Controles
+
+- Setas/WASD: direção e aceleração
+- Espaço: drift
+- Shift: nitro
+- `C`: alternar visualização entre topo e cabine
+- `Esc`: menu
+- Touch: botões na parte inferior da tela em mobile
+
+## Modo de jogo
+
+- Cidade aberta: trafego, colisões, free roam
+- Drift: pistas e pontuação por derrapagem
+
+## Deploy em GitHub Pages
+
+O repositório já inclui o workflow em `.github/workflows/pages.yml` para publicação via GitHub Pages.
+
+Para ativar no GitHub:
+
+1. Vá em `Settings` → `Pages`
+2. Em `Build and deployment`, selecione `GitHub Actions`
+3. Faça o push para a branch `main`
+4. A página ficará disponível em:
+
+```text
+https://moisesfreitas-sudo.github.io/drive-hub/
+```
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT.
